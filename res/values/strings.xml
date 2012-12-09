@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">精神科居家照護系統</string>
+    <string name="menu_settings">設定</string>
+    <string name="Inquiry_CaseNo">病歷號</string>
+    <string name="Inquiry_Data">輸入</string>
+    <string name="Inquiry_Name">姓名：</string>
+    <string name="Inquiry_Sex">性別：</string>
+    <string name="Inquiry_year">生日：</string>
+    <string name="Inquiry_IDcard">身分證：</string>
+    <string name="Inquiry_Datas">歷次就醫記錄</string>
+	<string name="Inquiry_register">掛號</string>
+	<string name="Inquiry_Day">看診日期：</string>
+	<string name="Inquiry_Time">時段：</string>
+	<string name="Inquiry_doctor">醫師：</string>
+	<string name="registTitle">掛號頁面</string>
+</resources>

@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/regist"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:textSize="40sp"
+        android:text="掛號" />
+
+    <Button
+        android:id="@+id/clinic"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:textSize="40sp"
+        android:text="問診" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:textSize="40sp"
+        android:text="查詢" />
+
+</LinearLayout>

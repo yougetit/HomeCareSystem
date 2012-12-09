@@ -1,0 +1,221 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/Inquiry_CaseNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/Inquiry_CaseNo"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/Inquiry_CaseNo_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/Inquiry_CaseNo"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/Inquiry_Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Inquiry_CaseNo_input"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/Inquiry_CaseNo_input"
+        android:text="@string/Inquiry_Data" />
+
+    <TextView
+        android:id="@+id/Inquiry_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Inquiry_CaseNo_input"
+        android:text="@string/Inquiry_Name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Inquiry_Name_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Inquiry_Name"
+        android:layout_alignBottom="@+id/Inquiry_Name"
+        android:layout_toRightOf="@+id/Inquiry_Name"
+        android:ems="5"
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Inquiry_Sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Inquiry_Name_input"
+        android:layout_alignBottom="@+id/Inquiry_Name_input"
+        android:layout_toRightOf="@+id/Inquiry_Name_input"
+        android:text="@string/Inquiry_Sex"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Inquiry_Sex_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Inquiry_Sex"
+        android:layout_alignBottom="@+id/Inquiry_Sex"
+        android:layout_toRightOf="@+id/Inquiry_Sex"
+        android:ems="3"
+        android:inputType="textPersonName"
+        android:textSize="20sp" >
+
+        <requestFocus />
+    </TextView>
+
+    <TextView
+        android:id="@+id/Inquiry_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Inquiry_Sex_input"
+        android:layout_alignBottom="@+id/Inquiry_Sex_input"
+        android:layout_toRightOf="@+id/Inquiry_Sex_input"
+        android:text="@string/Inquiry_year"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Inquiry_year_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Inquiry_year"
+        android:layout_alignBottom="@+id/Inquiry_year"
+        android:layout_toRightOf="@+id/Inquiry_year"
+        android:ems="7"
+        android:inputType="date"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Inquiry_IDcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Inquiry_year_input"
+        android:layout_alignBottom="@+id/Inquiry_year_input"
+        android:layout_toRightOf="@+id/Inquiry_year_input"
+        android:text="@string/Inquiry_IDcard"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Inquiry_IDcard_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Inquiry_IDcard"
+        android:layout_alignBottom="@+id/Inquiry_IDcard"
+        android:layout_toRightOf="@+id/Inquiry_IDcard"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Inquiry_Datas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Inquiry_Name_input"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@+id/Inquiry_Name"
+        android:text="@string/Inquiry_Datas"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:id="@+id/listLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Inquiry_Datas"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="23dp" >
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="275dp" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listLinear"
+        android:layout_marginTop="23dp" >
+
+        <TextView
+            android:id="@+id/Inquiry_Day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:text="@string/Inquiry_Day"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/regdate"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:editable="false" 
+            android:textSize="20sp" 
+            android:inputType="none" />
+
+        <Button
+            android:id="@+id/regdate_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="選取日期" />
+
+        <TextView
+            android:id="@+id/Inquiry_Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:text="@string/Inquiry_Time"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/Inquiry_Time_input"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/timeArray" 
+            android:textSize="20sp"  />
+
+        <TextView
+            android:id="@+id/Inquiry_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="@string/Inquiry_doctor"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/Inquiry_doctor_input"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/doctorArray" 
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/Inquiry_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Inquiry_register" />
+
+    </LinearLayout>
+
+</RelativeLayout>
