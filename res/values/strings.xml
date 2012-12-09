@@ -15,4 +15,5 @@
 	<string name="Inquiry_Time">時段：</string>
 	<string name="Inquiry_doctor">醫師：</string>
 	<string name="registTitle">掛號頁面</string>
+	<string name="clinicTitle">看診畫面</string>
 </resources>

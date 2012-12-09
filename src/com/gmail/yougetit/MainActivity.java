@@ -34,6 +34,19 @@ public class MainActivity extends Activity
 			}
 		});
 		
+		btn2.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{
+				// TODO 自動產生的方法 Stub
+				Intent it = new Intent();
+				it.setClass(MainActivity.this, Clinic.class);
+				startActivity(it);
+			}
+		});
+		
 	}
 
 	@Override
