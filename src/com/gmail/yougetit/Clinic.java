@@ -123,6 +123,23 @@ public class Clinic extends Activity
 							Clinic.this, value, R.layout.clinic_listview,
 							Contentitem, TextviewID);
 					clinicListView.setAdapter(simpleAdapter);
+					//加上事件
+					clinicListView.setOnItemClickListener(new OnItemClickListener()
+					{
+
+						@Override
+						public void onItemClick(AdapterView<?> arg0, View arg1,
+								int arg2, long arg3)
+						{
+							// 獲取選中項的HashMap對象
+							HashMap<String, Object> map = (HashMap<String, Object>)clinicListView.getItemAtPosition(arg2);
+							String chartno = map.get("chartno").toString();
+							String opddate = map.get("opddate").toString();
+							String regtime = map.get("regtime").toString();
+							
+							Toast.makeText(getApplicationContext(), "arg2:" + arg2 + " opddate:" + opddate + " chartno:" + chartno + " regtime:" + regtime, Toast.LENGTH_LONG).show();
+						}
+					});
 			}
 				catch (SQLException e)
 				{
