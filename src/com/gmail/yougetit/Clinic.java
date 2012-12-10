@@ -38,7 +38,7 @@ public class Clinic extends Activity
 	ListView clinicListView; // 歷次看診記錄
 	Spinner spinner1; // 看診時段
 	String PAGETAG = "ConnectMySQL";
-	
+
 	private int mYear;
 	private int mMonth;
 	private int mDay;
@@ -58,10 +58,10 @@ public class Clinic extends Activity
 
 		btnEnter.setOnClickListener(new OnClickListener()
 		{
-			
+
 			@Override
 			public void onClick(View v)
-			{			
+			{
 				try
 				{
 					Class.forName("com.mysql.jdbc.Driver");
@@ -71,7 +71,7 @@ public class Clinic extends Activity
 					e.printStackTrace();
 				}
 				EditText clinicDateTextBox = (EditText) findViewById(R.id.clinicDateTextBox);
-				String clinicDate = clinicDateTextBox.getText().toString(); //看診時間
+				String clinicDate = clinicDateTextBox.getText().toString(); // 看診時間
 				String clinicTime = spinner1.getSelectedItem().toString();
 				String MYSQL_IP = "59.126.210.3";
 				String MYSQL_DBNAME = "opd";
@@ -89,19 +89,23 @@ public class Clinic extends Activity
 				ResultSet resultSet = null;
 				clinicListView = (ListView) findViewById(R.id.clinicListView);
 				String[] Contentitem = new String[]
-				{ "chartno", "opddate", "regtime", "doctor", "icdno1", "icdno2",
-						"icdno3" };
+				{ "chartno", "opddate", "regtime", "doctor", "icdno1",
+						"icdno2", "icdno3" };
 				int[] TextviewID = new int[]
 				{ R.id.textView26, R.id.textView14, R.id.textView16,
-						R.id.textView18, R.id.textView20, R.id.textView22, R.id.textView24};
+						R.id.textView18, R.id.textView20, R.id.textView22,
+						R.id.textView24 };
 				List<HashMap<String, Object>> value = new ArrayList<HashMap<String, Object>>();
 
 				try
 				{
 					String script2 = "SELECT chartno, opddate, regtime, doctor, icdno1, icdno2, icdno3 from homecare where opddate="
-							+ "'" + clinicDate + "' and regtime='" + clinicTime + "'";
-					connect = (Connection) DriverManager
-							.getConnection(path);
+							+ "'"
+							+ clinicDate
+							+ "' and regtime='"
+							+ clinicTime
+							+ "'";
+					connect = (Connection) DriverManager.getConnection(path);
 					statement = (Statement) connect.createStatement();
 					resultSet = (ResultSet) statement.executeQuery(script2);
 
@@ -123,24 +127,35 @@ public class Clinic extends Activity
 							Clinic.this, value, R.layout.clinic_listview,
 							Contentitem, TextviewID);
 					clinicListView.setAdapter(simpleAdapter);
-					//加上事件
-					clinicListView.setOnItemClickListener(new OnItemClickListener()
-					{
+					// 加上事件
+					clinicListView
+							.setOnItemClickListener(new OnItemClickListener()
+							{
 
-						@Override
-						public void onItemClick(AdapterView<?> arg0, View arg1,
-								int arg2, long arg3)
-						{
-							// 獲取選中項的HashMap對象
-							HashMap<String, Object> map = (HashMap<String, Object>)clinicListView.getItemAtPosition(arg2);
-							String chartno = map.get("chartno").toString();
-							String opddate = map.get("opddate").toString();
-							String regtime = map.get("regtime").toString();
-							
-							Toast.makeText(getApplicationContext(), "arg2:" + arg2 + " opddate:" + opddate + " chartno:" + chartno + " regtime:" + regtime, Toast.LENGTH_LONG).show();
-						}
-					});
-			}
+								@Override
+								public void onItemClick(AdapterView<?> arg0,
+										View arg1, int arg2, long arg3)
+								{
+									// 獲取選中項的HashMap對象
+									HashMap<String, Object> map = (HashMap<String, Object>) clinicListView
+											.getItemAtPosition(arg2);
+									String chartno = map.get("chartno")
+											.toString();
+									String opddate = map.get("opddate")
+											.toString();
+									String regtime = map.get("regtime")
+											.toString();
+
+									Toast.makeText(
+											getApplicationContext(),
+											"arg2:" + arg2 + " opddate:"
+													+ opddate + " chartno:"
+													+ chartno + " regtime:"
+													+ regtime,
+											Toast.LENGTH_LONG).show();
+								}
+							});
+				}
 				catch (SQLException e)
 				{
 					e.printStackTrace();
@@ -166,12 +181,11 @@ public class Clinic extends Activity
 					{
 					}
 				}
-				Toast.makeText(Clinic.this, "查詢完成！", Toast.LENGTH_LONG)
-						.show();
+				Toast.makeText(Clinic.this, "查詢完成！", Toast.LENGTH_LONG).show();
 			}
-			
+
 		});
-		
+
 		btnDate.setOnClickListener(new OnClickListener()
 		{
 
@@ -182,7 +196,7 @@ public class Clinic extends Activity
 			}
 		});
 
-		//畫面啟動時獲得當前的日期：		
+		// 畫面啟動時獲得當前的日期：
 		final Calendar currentDate = Calendar.getInstance();
 		mYear = currentDate.get(Calendar.YEAR);
 		mMonth = currentDate.get(Calendar.MONTH);
@@ -192,8 +206,7 @@ public class Clinic extends Activity
 		dateText.setText(new StringBuilder().append(mYear).append("-")
 				.append(mMonth + 1).append("-")// 得到的月份+1，因為從0開始
 				.append(mDay));
-				
-		
+
 	}
 
 	public void showDateDialog()
@@ -201,16 +214,16 @@ public class Clinic extends Activity
 		// 根據傳進的參數來實例化DialogFragment.
 		// MyDialogFragment newDialog =
 		// MyDialogFragment.newInstance(MyDialogFragment.ALTER_DIALOG);
-		MyDialogFragment newDialog = MyDialogFragment.newInstance(MyDialogFragment.DATE_PICKER_DIALOG);
+		MyDialogFragment newDialog = MyDialogFragment
+				.newInstance(MyDialogFragment.DATE_PICKER_DIALOG);
 		// MyDialogFragment newDialog =
 		// MyDialogFragment.newInstance(MyDialogFragment.TIME_PICKER_DiALOG);
 		newDialog.setCallBack(mDateSetListener);
 		newDialog.show(getFragmentManager(), "alert msg");
 	}
-	
 
 	// 需要定義彈出的DatePicker對話框的事件監聽器：
-	
+
 	DatePickerDialog.OnDateSetListener mDateSetListener = new OnDateSetListener()
 	{
 		public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -225,5 +238,5 @@ public class Clinic extends Activity
 					.append(mDay));
 		}
 	};
-	
+
 }
