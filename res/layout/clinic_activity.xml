@@ -36,8 +36,9 @@
 	android:text="時段：" />
 <Spinner
 	android:id="@+id/clinicTimeSelecter"
-	android:layout_width="100dp"
+	android:layout_width="75dp"
 	android:layout_height="wrap_content" 
+	android:entries="@array/timeArray" 
 	android:textSize="20sp" />
 <Button
 	android:id="@+id/clinicEnterBtn"
@@ -51,5 +52,7 @@
 	android:id="@+id/clinicListView"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
+	android:layout_marginLeft="25dp"
+	android:layout_marginRight="25dp"
 	android:layout_marginTop="15dp" />
 </LinearLayout>

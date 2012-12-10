@@ -56,6 +56,105 @@ public class Clinic extends Activity
 		spinner1 = (Spinner) findViewById(R.id.clinicTimeSelecter);
 		Button btnEnter = (Button) findViewById(R.id.clinicEnterBtn);
 
+		btnEnter.setOnClickListener(new OnClickListener()
+		{
+			
+			@Override
+			public void onClick(View v)
+			{			
+				try
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+				}
+				catch (ClassNotFoundException e)
+				{
+					e.printStackTrace();
+				}
+				EditText clinicDateTextBox = (EditText) findViewById(R.id.clinicDateTextBox);
+				String clinicDate = clinicDateTextBox.getText().toString(); //看診時間
+				String clinicTime = spinner1.getSelectedItem().toString();
+				String MYSQL_IP = "59.126.210.3";
+				String MYSQL_DBNAME = "opd";
+				String MYSQL_USERNAME = "root";
+				String MYSQL_PASSWORD = "1999";
+				String path = "jdbc:mysql://" + MYSQL_IP + "/" + MYSQL_DBNAME
+						+ "?" + "user=" + MYSQL_USERNAME + "&password="
+						+ MYSQL_PASSWORD;
+
+				String PAGETAG = "ConnectMySQL";
+				Log.e(PAGETAG, path);
+
+				Connection connect = null;
+				Statement statement = null;
+				ResultSet resultSet = null;
+				clinicListView = (ListView) findViewById(R.id.clinicListView);
+				String[] Contentitem = new String[]
+				{ "chartno", "opddate", "regtime", "doctor", "icdno1", "icdno2",
+						"icdno3" };
+				int[] TextviewID = new int[]
+				{ R.id.textView26, R.id.textView14, R.id.textView16,
+						R.id.textView18, R.id.textView20, R.id.textView22, R.id.textView24};
+				List<HashMap<String, Object>> value = new ArrayList<HashMap<String, Object>>();
+
+				try
+				{
+					String script2 = "SELECT chartno, opddate, regtime, doctor, icdno1, icdno2, icdno3 from homecare where opddate="
+							+ "'" + clinicDate + "' and regtime='" + clinicTime + "'";
+					connect = (Connection) DriverManager
+							.getConnection(path);
+					statement = (Statement) connect.createStatement();
+					resultSet = (ResultSet) statement.executeQuery(script2);
+
+					Log.e(PAGETAG, script2);
+					while (resultSet.next())
+					{
+						HashMap<String, Object> item = new HashMap<String, Object>();
+						item.put("chartno", resultSet.getString(1));
+						item.put("opddate", resultSet.getString(2));
+						item.put("regtime", resultSet.getString(3));
+						item.put("doctor", resultSet.getString(4));
+						item.put("icdno1", resultSet.getString(5));
+						item.put("icdno2", resultSet.getString(6));
+						item.put("icdno3", resultSet.getString(7));
+						value.add(item);
+					}
+
+					SimpleAdapter simpleAdapter = new SimpleAdapter(
+							Clinic.this, value, R.layout.clinic_listview,
+							Contentitem, TextviewID);
+					clinicListView.setAdapter(simpleAdapter);
+			}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+				finally
+				{
+					try
+					{
+						if (resultSet != null)
+						{
+							resultSet.close();
+						}
+						if (statement != null)
+						{
+							statement.close();
+						}
+						if (connect != null)
+						{
+							connect.close();
+						}
+					}
+					catch (Exception e)
+					{
+					}
+				}
+				Toast.makeText(Clinic.this, "查詢完成！", Toast.LENGTH_LONG)
+						.show();
+			}
+			
+		});
+		
 		btnDate.setOnClickListener(new OnClickListener()
 		{
 
