@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	android:id="@+id/widget32"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+	android:id="@+id/widget40"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+<TextView
+	android:id="@+id/widget41"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="&#30149;&#20154;&#20027;&#36848;&#65306;" />
+<EditText
+	android:id="@+id/widget42"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="EditText"
+	android:textSize="18sp" />
+</LinearLayout>
+<LinearLayout
+	android:id="@+id/widget45"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+<TextView
+	android:id="@+id/widget46"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="&#37291;&#24107;&#35386;&#26039;&#65306;" />
+<EditText
+	android:id="@+id/widget47"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="EditText"
+	android:textSize="18sp" />
+</LinearLayout>
+<LinearLayout
+	android:id="@+id/widget48"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+<TextView
+	android:id="@+id/widget49"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="&#35386;&#26039;&#30908;&#65306;" />
+<Spinner
+	android:id="@+id/widget50"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+<Spinner
+	android:id="@+id/widget51"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+<Spinner
+	android:id="@+id/widget52"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+</LinearLayout>
+<LinearLayout
+	android:id="@+id/widget53"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+<TextView
+	android:id="@+id/widget54"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="&#37291;&#22225;&#65306;" />
+<LinearLayout
+	android:id="@+id/widget55"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+<Spinner
+	android:id="@+id/widget56"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+<Spinner
+	android:id="@+id/widget57"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+<Spinner
+	android:id="@+id/widget59"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+<Spinner
+	android:id="@+id/widget60"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+<Spinner
+	android:id="@+id/widget61"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+</LinearLayout>
+</LinearLayout>
+<LinearLayout
+	android:id="@+id/widget68"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+<Button
+	android:id="@+id/widget70"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="&#20786;&#23384;" />
+<Button
+	android:id="@+id/widget71"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="&#21462;&#28040;" />
+</LinearLayout>
+</LinearLayout>

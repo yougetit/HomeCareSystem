@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -146,6 +147,10 @@ public class Clinic extends Activity
 									String regtime = map.get("regtime")
 											.toString();
 
+									Intent it = new Intent();
+									it.setClass(Clinic.this, Doctor.class);
+									startActivity(it);
+									/* ¼u¥Xµøµ¡
 									Toast.makeText(
 											getApplicationContext(),
 											"arg2:" + arg2 + " opddate:"
@@ -153,6 +158,7 @@ public class Clinic extends Activity
 													+ chartno + " regtime:"
 													+ regtime,
 											Toast.LENGTH_LONG).show();
+											*/
 								}
 							});
 				}

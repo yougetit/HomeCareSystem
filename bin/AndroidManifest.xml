@@ -26,6 +26,8 @@
             android:label="@string/registTitle" />
                 <activity android:name="com.gmail.yougetit.Clinic" 
             android:label="@string/clinicTitle" />
+                                <activity android:name="com.gmail.yougetit.Doctor" 
+            android:label="@string/clinicTitle" />
     </application>
 
 </manifest>
